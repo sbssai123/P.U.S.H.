@@ -1,2 +1,2 @@
 # P.U.S.H.
-The P.U.S.H. Project: Preventing Unwanted Social Harassment
+P.U.S.H: Preventing Unwanted Social Harassment
