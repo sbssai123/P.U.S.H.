@@ -56,9 +56,12 @@ public class NewGroupActivity extends AppCompatActivity implements View.OnClickL
     private void addMembers() {
         EditText groupNameText = (EditText) findViewById(R.id.groupName);
         String groupName = groupNameText.toString();
-        GroupActivity.groups.add(groupName);
         Set<String> memberNames = new HashSet<String>();
         SharedPreferences.Editor editor = shared.edit();
+        // add to groups
+        Set<String> groups = shared.getStringSet(MainActivity.GROUPS, new HashSet<String>());
+        groups.add(groupName);
+        editor.putStringSet(MainActivity.GROUPS, groups);
         for (Member m : GroupActivity.groupMembers) {
             memberNames.add(m.getName());
             // adds members -> phone numbers
