@@ -1,7 +1,9 @@
 package com.example.schou.push;
 
+import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.app.RemoteInput;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -54,13 +56,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
     }
+    private static final String KEY_TEXT_REPLY = "key_text_reply";
 
     private void addNotification() {
+        Intent intent = new Intent(this, BsyncTask.class);
+        PendingIntent pIntent = PendingIntent.getActivity(this, (int) System.currentTimeMillis(), intent, 0);
+
         android.support.v4.app.NotificationCompat.Builder builder =
                 new NotificationCompat.Builder(this)
                         .setSmallIcon(R.drawable.notification_icon)
                         .setContentTitle("P.U.S.H. Alert")
                         .setContentText("Are you in trouble?")
+        .addAction(R.drawable.icon, "Yes", pIntent)
                         .setOngoing(true);
 
         Intent notificationIntent = new Intent(this, MainActivity.class);
@@ -71,6 +78,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Add as notification
         NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         manager.notify(0, builder.build());
+
+
     }
 
 
