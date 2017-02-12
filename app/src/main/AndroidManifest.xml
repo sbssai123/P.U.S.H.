@@ -20,7 +20,10 @@
         </activity>
         <activity android:name=".GroupActivity" />
         <activity android:name=".MessageActivity" />
-        <activity android:name=".BsyncTask"></activity>
+        <activity android:name=".NewMemberActivity" />
+        <activity android:name=".NewGroupActivity" />
+        <activity android:name=".MembersInGroupActivity" />
+        <activity android:name=".NewMessageActivity"></activity>
     </application>
 
 </manifest>

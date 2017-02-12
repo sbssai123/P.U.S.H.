@@ -1,37 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_message"
+    android:orientation="vertical"
+    android:id="@+id/activity_new_group"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.schou.push.MessageActivity">
+    tools:context="com.example.schou.push.NewGroupActivity">
+
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
+        android:hint="Group Name:"
         android:ems="10"
-        android:layout_marginTop="15dp"
-        android:id="@+id/editText2"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginBottom="40dp"
+        android:id="@+id/groupName" />
 
     <ListView
-        android:id="@+id/listOfMessages"
+        android:id="@+id/listOfMembers"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
     </ListView>
 
-
     <Button
-        android:id="@+id/addNewMessageButton"
-        android:layout_below="@id/listOfMessages"
+        android:id="@+id/addMemberButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add New Message" />
-</RelativeLayout>
+        android:text="Add Member" />
+
+    <Button
+        android:id="@+id/backToGroupsButton"
+        android:layout_below="@+id/addMemberButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back" />
+</LinearLayout>
