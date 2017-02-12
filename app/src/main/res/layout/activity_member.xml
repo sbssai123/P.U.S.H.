@@ -12,16 +12,7 @@
     tools:context="com.example.schou.push.NewMemberActivity">
 
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:hint="Phone:"
-        android:ems="10"
-        android:id="@+id/memberPhone"
-        android:layout_marginTop="42dp"
-        android:layout_alignTop="@+id/memberName"
-        android:layout_alignParentStart="true" />
+
 
     <Button
         android:id="@+id/saveMemberButton"
@@ -45,6 +36,16 @@
         android:id="@+id/memberName"
         android:layout_marginTop="30dp"
         android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:hint="Phone:"
+        android:ems="10"
+        android:id="@+id/memberPhone"
+        android:layout_marginTop="42dp"
+        android:layout_alignTop="@+id/memberName"
         android:layout_alignParentStart="true" />
 
 </RelativeLayout>
