@@ -64,6 +64,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(this, MessageActivity.class);
             startActivity(intent);
         }
+        // to send persistent notification to the home screen
+        if (view.getId() == R.id.activeButton) {
+
+        }
     }
 
 }

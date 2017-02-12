@@ -78,5 +78,10 @@ public class NewGroupActivity extends AppCompatActivity implements View.OnClickL
             Intent intent = new Intent(this, NewMemberActivity.class);
             startActivity(intent);
         }
+
+        if (v.getId() == R.id.validateGroup) {
+            Intent intent = new Intent(this, GroupActivity.class);
+            startActivity(intent);
+        }
     }
 }
