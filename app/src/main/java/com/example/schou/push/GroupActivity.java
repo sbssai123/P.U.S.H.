@@ -32,23 +32,24 @@ public class GroupActivity extends AppCompatActivity implements View.OnClickList
 
         groupMembers = new LinkedList<Member>();
         groups = new LinkedList<String>();
-
-        addGroupButton = (Button)findViewById(R.id.addGroupButton);
-        addGroupButton.setOnClickListener(this);
-
-        //todo change this so that it is the one they clicked on, but for now it is the last one
-        /*AppData.currentGroup = AppData.groups.size();
-        int cg = AppData.currentGroup;
-        //put a new String at the currentGroup value that is all caps.
-        AppData.groups.put(cg, AppData.groups.get(cg).toString().toUpperCase());*/
+//
+//        addGroupButton = (Button)findViewById(R.id.addGroupButton);
+//        addGroupButton.setOnClickListener(this);
+//
+//        //todo change this so that it is the one they clicked on, but for now it is the last one
+//        /*AppData.currentGroup = AppData.groups.size();
+//        int cg = AppData.currentGroup;
+//        //put a new String at the currentGroup value that is all caps.
+//        AppData.groups.put(cg, AppData.groups.get(cg).toString().toUpperCase());*/
     }
 
     //When the button is clicked, go to the page to add a new Group
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.addGroupButton) {
+        if (v.getId() == R.id.createGroupButton) {
             Intent intent = new Intent(this, NewGroupActivity.class);
             startActivity(intent);
         }
     }
+
 }
