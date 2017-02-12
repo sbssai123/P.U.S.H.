@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -35,27 +36,37 @@ public class NewGroupActivity extends AppCompatActivity implements View.OnClickL
         shared = getSharedPreferences(MainActivity.PREF_NAME, Context.MODE_PRIVATE);
 
         addGroupButton = (Button)findViewById(R.id.addMemberButton);
-        back = (Button)findViewById(R.id.backToGroupsButton);
 
         listOfMembers = (ListView)findViewById(R.id.listOfMembers);
 
         addGroupButton.setOnClickListener(this);
-        back.setOnClickListener(this);
 
         //todo change this!!
 //        AppData.members[0].put("joe", 123);
         //update what is in the hashmap at 0 and change it to uppercase to notify users of
         //the current group chosen
   //      AppData.groups.put(0, AppData.groups.get(0).toString().toUpperCase());
+
+        displayMembers();
     }
 
+
+    // displays the currently entered members of the group
+    private void displayMembers() {
+        TextView membersList = (TextView) findViewById(R.id.addMembers);
+        String str = "";
+        for (Member m : GroupActivity.groupMembers) {
+            str += "\n" + m.getName();
+        }
+        membersList.setText(str);
+    }
 
     // adds the group to sharedPreference
     // todo change this
     // overwrites if group already exists, (empty string is also valid)
     private void addMembers() {
         EditText groupNameText = (EditText) findViewById(R.id.groupName);
-        String groupName = groupNameText.toString();
+        String groupName = groupNameText.getText().toString();
         Set<String> memberNames = new HashSet<String>();
         SharedPreferences.Editor editor = shared.edit();
         // add to groups
@@ -72,21 +83,29 @@ public class NewGroupActivity extends AppCompatActivity implements View.OnClickL
         editor.commit();
     }
 
+    // assigns a default if there exists none
+    private void checkDefault() {
+        if (shared.getString(MainActivity.DEFAULT_GROUP, "").equals("")) {
+            EditText groupNameText = (EditText) findViewById(R.id.groupName);
+            String groupName = groupNameText.getText().toString();
+            SharedPreferences.Editor editor = shared.edit();
+            editor.putString(MainActivity.DEFAULT_GROUP, groupName);
+            editor.commit();
+        }
+    }
+
     //When the Add button is clicked, go to the page to add a new Member
     //When the back button is clicked, save and return to the Group page
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.addMemberButton) {
-            //EditText memberName = (EditText) findViewById(R.id.)
-
             Intent intent = new Intent(this, NewMemberActivity.class);
             startActivity(intent);
         }
 
-        if (v.getId() == R.id.backToGroupsButton) {
-            //todo get the group info.
-            //add all the members to the AppData.members hash
+        if (v.getId() == R.id.validateGroup) {
             addMembers();
+            checkDefault();
             Intent intent = new Intent(this, GroupActivity.class);
             startActivity(intent);
         }
