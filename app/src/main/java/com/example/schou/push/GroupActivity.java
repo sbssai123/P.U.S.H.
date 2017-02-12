@@ -37,10 +37,10 @@ public class GroupActivity extends AppCompatActivity implements View.OnClickList
         addGroupButton.setOnClickListener(this);
 
         //todo change this so that it is the one they clicked on, but for now it is the last one
-        AppData.currentGroup = AppData.groups.size();
+        /*AppData.currentGroup = AppData.groups.size();
         int cg = AppData.currentGroup;
         //put a new String at the currentGroup value that is all caps.
-        AppData.groups.put(cg, AppData.groups.get(cg).toString().toUpperCase());
+        AppData.groups.put(cg, AppData.groups.get(cg).toString().toUpperCase());*/
     }
 
     //When the button is clicked, go to the page to add a new Group
