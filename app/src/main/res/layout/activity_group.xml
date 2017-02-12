@@ -28,13 +28,13 @@
                 android:onClick="onClick"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentTop="true"
-                android:layout_alignBottom="@+id/button" />
+                android:layout_alignBottom="@+id/backButton" />
 
             <Button
                 android:layout_width="wrap_content"
-                android:text="<-"
+                android:text="back"
                 android:onClick="onClick"
-                android:textSize="28dp"
+                android:textSize="20dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/backButton" />
 
@@ -67,7 +67,7 @@
                     android:fillViewport="true"> <!--IMPORTANT otherwise backgrnd img. will not fill the whole screen -->
 
                     <TextView
-                        android:id="@+id/exercise_list"
+                        android:id="@+id/group_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"

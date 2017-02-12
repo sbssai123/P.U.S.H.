@@ -53,7 +53,7 @@ public class NewGroupActivity extends AppCompatActivity implements View.OnClickL
     // overwrites if group already exists, (empty string is also valid)
     private void addMembers() {
         EditText groupNameText = (EditText) findViewById(R.id.groupName);
-        String groupName = groupNameText.toString();
+        String groupName = groupNameText.getText().toString();
         Set<String> memberNames = new HashSet<String>();
         SharedPreferences.Editor editor = shared.edit();
         // add to groups
