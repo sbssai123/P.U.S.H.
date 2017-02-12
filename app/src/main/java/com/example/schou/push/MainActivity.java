@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     protected static String PREF_NAME = "MyPrefs";
     protected static String GROUPS = "Groups";
+    protected static String DEFAULT_GROUP = "Default";
 
     private SharedPreferences shared;
 
@@ -90,6 +91,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(this, GroupActivity.class);
             startActivity(intent);
         }
+      
+        /*if (view.getId() == R.id.messagesButton) {
+            Intent intent = new Intent(this, MessageActivity.class);
+            startActivity(intent);
+        }*/
         // to send persistent notification to the home screen
         if (view.getId() == R.id.activeButton) {
             addNotification();

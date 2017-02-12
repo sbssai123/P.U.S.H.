@@ -59,21 +59,21 @@
                 android:layout_marginTop="52dp"
                 android:layout_alignParentEnd="true"> <!--IMPORTANT otherwise backgrnd img. will not fill the whole screen -->
 
-                <TextView
-                    android:id="@+id/exercise_list"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginTop="20dp"
-                    android:textSize="18dp"
-                    android:textColor="@color/colorPrimary" />
+                    <TextView
+                        android:id="@+id/group_members"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="20dp"
+                        android:textSize="18dp"
+                        android:textColor="@color/colorPrimary" />
 
             </ScrollView>
 
-            <EditText
-                android:id="@+id/custom_workout_name"
+            <TextView
+                android:id="@+id/group_name"
                 android:text="Add Group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -89,6 +89,7 @@
                 android:textSize="40dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
                 android:onClick="onClick"
                 android:height="90dp"
                 android:background="#6455d4"
@@ -96,6 +97,11 @@
                 android:layout_below="@+id/scroll"
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="12dp" />
+                android:spinnerMode="dialog"
+                android:layout_marginRight="27dp"
+                android:layout_alignBottom="@+id/group_name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="11dp" />
 
         </RelativeLayout>
 
