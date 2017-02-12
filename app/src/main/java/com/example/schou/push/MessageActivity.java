@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 
 import java.util.List;
 /*
@@ -14,6 +15,7 @@ Message to select it as the current for the night.
 public class MessageActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button addNewMsg;
+    ListView listOfMessages;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,16 @@ public class MessageActivity extends AppCompatActivity implements View.OnClickLi
 
         addNewMsg = (Button)findViewById(R.id.addNewMessageButton);
         addNewMsg.setOnClickListener(this);
+
+        listOfMessages = (ListView)findViewById(R.id.listOfMessages);
+
+        //todo change this, right now it is just the last one in the list as the current, we want
+        //todo it to be the one the user selects.
+        AppData.currentMessage = AppData.messages.size();
+        int cm = AppData.currentMessage;
+        // update what is in the hashmap at the currentMessage ID and change it to uppercase to
+        // notify users of the current message chosen
+        AppData.groups.put(cm, AppData.groups.get(cm).toString().toUpperCase());
     }
 
 

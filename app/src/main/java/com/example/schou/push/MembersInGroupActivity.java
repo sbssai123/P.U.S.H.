@@ -33,7 +33,7 @@ public class MembersInGroupActivity extends AppCompatActivity implements View.On
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.addNewMem) {
-            Intent intent = new Intent(this, MemberActivity.class);
+            Intent intent = new Intent(this, NewMemberActivity.class);
             startActivity(intent);
         }
         if (v.getId() == R.id.backToGroups) {

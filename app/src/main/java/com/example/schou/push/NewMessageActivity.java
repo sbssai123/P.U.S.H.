@@ -27,6 +27,8 @@ public class NewMessageActivity extends AppCompatActivity implements View.OnClic
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.saveMessageButton) {
+            //TODO get the data from the text box, and add the string to the AppData.messages hashmap
+            //at int size + 1
             Intent intent = new Intent(this, MessageActivity.class);
             startActivity(intent);
         }
