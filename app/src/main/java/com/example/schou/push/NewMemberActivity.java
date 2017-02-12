@@ -33,7 +33,6 @@ public class NewMemberActivity extends AppCompatActivity implements View.OnClick
     }
 
     //if Save Member is clicked, go back to the New Group Activity page
-    //TODO make sure to save the Member and it should appear in the list of messages
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.saveMemberButton) {

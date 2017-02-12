@@ -60,7 +60,18 @@
     android:height="60dp"
         android:textSize="24dp"
     android:onClick="onClick"
-        android:layout_marginBottom="26dp"
         android:layout_above="@+id/activeButton"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/messageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Messages"
+        android:width="500dp"
+        android:height="60dp"
+        android:textSize="24dp"
+        android:onClick="onClick"
+        android:layout_above="@+id/groupButton"
         android:layout_alignParentStart="true" />
 </RelativeLayout>
