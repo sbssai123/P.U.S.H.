@@ -12,14 +12,11 @@ Groups or delete Groups, as well as add Groups to Favorites. After creating a ne
 add a Group Name, and then add Members (with Names and Phone Numbers, so P.U.S.H. can contact them).
 Choose which Group you want to be your default Group for the night.
 
-~~2. <b>Write a Message.</b> This will be the message that will be sent out in case you need to contact your
+~~2. Write a Message. This will be the message that will be sent out in case you need to contact your
 friends in a hurry. Just like with Groups, you can add new Messages and delete them as you please.
 Just make sure you choose the Message of the Night as your Default.~~
 
-~~3. <b>Bluetooth Connect to your Arduino button.</b> This way, when you push the button, it will connect to
-P.U.S.H. and be able to notify your friends in your selected Group.~~
-
-4. <b>You're all set!</b>
+3. <b>You're all set!</b>
 
 
 Once you configure everything, don't worry about going out! In the unfortunate circumstance where 
