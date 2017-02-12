@@ -39,8 +39,6 @@ public class NewMemberActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View v) {
         if (v.getId() == R.id.saveMemberButton) {
             // todo validation
-            //TODO get the data from the text boxes. Add it to the AppData.members hashmap, where
-            //TODO the String is the value placed at the phone number key
 
             EditText nameText = (EditText)findViewById(R.id.memberName);
             EditText phoneText = (EditText)findViewById(R.id.memberPhone);
@@ -54,8 +52,8 @@ public class NewMemberActivity extends AppCompatActivity implements View.OnClick
             Member m = new Member(name, phone);
             GroupActivity.groupMembers.add(m);
 
-//            Intent intent = new Intent(this, NewGroupActivity.class);
-//            startActivity(intent);
+            Intent intent = new Intent(this, NewGroupActivity.class);
+            startActivity(intent);
         }
     }
 

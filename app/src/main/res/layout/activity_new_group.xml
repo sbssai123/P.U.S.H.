@@ -19,6 +19,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:hint="Group Name:"
+        android:textSize="28"
         android:ems="10"
         android:layout_marginBottom="40dp"
         android:id="@+id/groupName" />
@@ -31,8 +32,8 @@
     <!--</ListView>-->
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="228dp"
-        android:layout_weight="0.42">
+        android:layout_height="154dp"
+        android:layout_weight="0.49">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="250dp"
@@ -42,13 +43,24 @@
 
     <Button
         android:id="@+id/addMemberButton"
-        android:layout_width="339dp"
+        android:layout_width="357dp"
         android:layout_height="wrap_content"
         android:textColor="#FFFFFF"
         android:text="Add Member"
         android:textSize="24dp"
         android:onClick="onClick"
         android:background="#6455d4"
+        android:layout_weight="0.11" />
+
+    <Button
+        android:id="@+id/validateGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:text="Create Group"
+        android:textSize="24dp"
+        android:onClick="onClick"
+        android:background="#bd4dd1"
         android:layout_weight="0.14" />
 
 </LinearLayout>
