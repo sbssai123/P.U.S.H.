@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:spinnerMode="dialog"
                 android:layout_marginRight="27dp"
-                android:layout_alignBottom="@+id/custom_workout_name"
+                android:layout_alignBottom="@+id/group_name"
                 android:layout_centerHorizontal="true" />
 
             <ScrollView
