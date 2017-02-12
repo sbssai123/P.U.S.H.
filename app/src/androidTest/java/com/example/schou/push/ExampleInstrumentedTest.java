@@ -1,4 +1,4 @@
-package com.example.admin.push;
+package com.example.schou.push;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.admin.push", appContext.getPackageName());
+        assertEquals("com.example.schou.push", appContext.getPackageName());
     }
 }

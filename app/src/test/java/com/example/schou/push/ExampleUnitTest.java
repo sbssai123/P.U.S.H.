@@ -1,4 +1,4 @@
-package com.example.admin.push;
+package com.example.schou.push;
 
 import org.junit.Test;
 
