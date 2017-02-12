@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         groupButton.setOnClickListener(this);
 
         messagesButton = (Button)findViewById(R.id.messagesButton);
+        messagesButton.setOnClickListener(this);
 
     }
 
