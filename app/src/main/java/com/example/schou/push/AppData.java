@@ -8,7 +8,7 @@ import java.util.HashMap;
 
 public class AppData {
     //members is the array of Members in a group. Maps a String name to an Integer Phone number.
-    public static HashMap<String, Integer> members[] = new HashMap[10];
+    public static HashMap<String, String> members = new HashMap<>();
 
     //groups is a hashmap from Group ID number to String Group Name.
     public static HashMap<Integer, String> groups = new HashMap<>();
