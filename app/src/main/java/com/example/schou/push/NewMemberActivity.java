@@ -64,7 +64,6 @@ public class NewMemberActivity extends AppCompatActivity implements View.OnClick
 
             Member m = new Member(name, phone);
             GroupActivity.groupMembers.add(m);
-
             Intent intent = new Intent(this, NewGroupActivity.class);
             startActivity(intent);
         }

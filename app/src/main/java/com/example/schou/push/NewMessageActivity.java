@@ -13,6 +13,7 @@ Screen for adding a new Message that has a Text Box, and a Save/Back button.
 public class NewMessageActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button saveMessageButton;
+    EditText msg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,8 @@ public class NewMessageActivity extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.activity_new_message);
         saveMessageButton = (Button)findViewById(R.id.saveMessageButton);
         saveMessageButton.setOnClickListener(this);
+
+        msg = (EditText)findViewById(R.id.message);
     }
 
 
@@ -42,6 +45,9 @@ public class NewMessageActivity extends AppCompatActivity implements View.OnClic
         if (v.getId() == R.id.saveMessageButton) {
             //TODO get the data from the text box, and add the string to the AppData.messages hashmap
             //at int size + 1
+
+            AppData.messages.put((Integer)(AppData.messages.size() + 1), msg.getText().toString());
+
             Intent intent = new Intent(this, MessageActivity.class);
             startActivity(intent);
         }

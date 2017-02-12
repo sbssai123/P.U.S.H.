@@ -26,6 +26,7 @@
 
     <TextView
         android:layout_width="wrap_content"
+
         android:layout_height="wrap_content"
         android:textSize="72sp"
         android:text="P.U.S.H."
@@ -37,8 +38,10 @@
         android:layout_centerHorizontal="true" />
 
     <Button
+
         android:id="@+id/activeButton"
         android:layout_width="wrap_content"
+
         android:layout_height="wrap_content"
         android:text="Activate"
         android:textSize="24dp"

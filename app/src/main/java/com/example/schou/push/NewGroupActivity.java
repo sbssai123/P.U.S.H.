@@ -41,8 +41,6 @@ public class NewGroupActivity extends AppCompatActivity implements View.OnClickL
 
         addGroupButton.setOnClickListener(this);
 
-
-        displayMembers();
     }
 
 
@@ -98,9 +96,6 @@ public class NewGroupActivity extends AppCompatActivity implements View.OnClickL
             startActivity(intent);
         }
 
-        if (v.getId() == R.id.validateGroup) {
-            addMembers();
-            checkDefault();
             Intent intent = new Intent(this, GroupActivity.class);
             startActivity(intent);
         }
