@@ -7,9 +7,10 @@ import android.view.View;
 import android.widget.Button;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
-import Group.Group;
+import Group.*;
 
 /*
 This page is for Groups. There is a list of Group Names, as well as the option to add new Groups
@@ -20,10 +21,17 @@ public class GroupActivity extends AppCompatActivity implements View.OnClickList
 
     Button addGroupButton;
 
+
+    protected static List<Member> groupMembers;
+    protected static List<String> groups;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_group);
+
+        groupMembers = new LinkedList<Member>();
+        groups = new LinkedList<String>();
 
         addGroupButton = (Button)findViewById(R.id.addGroupButton);
         addGroupButton.setOnClickListener(this);

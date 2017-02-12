@@ -1,6 +1,7 @@
 package com.example.schou.push;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,17 +16,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button groupButton;
     Button messagesButton;
 
-    private static String userId = "u-6kaarnu3kfgeodbaawdyaxi";
-    private static String apiToken = "t-hwwtdcfowaddpuc6z6jhj5q";
-    private static String apiSecret = "nhjghkxdfaxvoic4puc5iufbibpca56hipznfha";
+    protected static String PREF_NAME = "MyPrefs";
+    protected static String GROUPS = "Groups";
 
+    private SharedPreferences shared;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        new BsyncTask().execute();
+
+
+        //new BsyncTask().execute();
         //RequestQueue queue = Volley.newRequestQueue(this);  // this = context
 
 
