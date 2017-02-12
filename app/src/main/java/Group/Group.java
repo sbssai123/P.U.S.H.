@@ -1,4 +1,4 @@
-package com.example.schou.push;
+package Group;
 
 import java.util.List;
 
@@ -10,6 +10,7 @@ public class Group {
     private String groupName;
     private List<Member> members;
 
+    //todo is this necessary? or should i have it defaulted to empty
     public Group(String g, List<Member> m) {
         this.groupName = g;
         this.members = m;

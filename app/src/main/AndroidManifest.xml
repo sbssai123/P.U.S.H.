@@ -16,7 +16,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".GroupActivity" />
-        <activity android:name=".MessageActivity"></activity>
+        <activity android:name=".MessageActivity" />
+        <activity android:name=".NewMemberActivity" />
+        <activity android:name=".NewGroupActivity" />
+        <activity android:name=".MembersInGroupActivity" />
+        <activity android:name=".NewMessageActivity"></activity>
     </application>
 
 </manifest>
