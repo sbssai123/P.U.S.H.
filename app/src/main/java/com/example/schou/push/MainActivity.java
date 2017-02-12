@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected static String GROUPS = "Groups";
     protected static String DEFAULT_GROUP = "Default";
 
-    private SharedPreferences shared;
+    protected static SharedPreferences shared;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
