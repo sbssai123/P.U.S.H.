@@ -7,6 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.ArrayList;
+
+import Group.Member;
+
 /*
 This page is for adding new Members. Users can add a Memver with a Name and a Phone Number.
 There is an option to Save the data and return back to the Group page.
@@ -15,7 +19,9 @@ public class NewMemberActivity extends AppCompatActivity implements View.OnClick
 
     Button saveMember;
     //Member fields
-    EditText name, phone;
+    String name, phone;
+
+    ArrayList<String> groupMembers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,14 +30,7 @@ public class NewMemberActivity extends AppCompatActivity implements View.OnClick
 
         saveMember = (Button)findViewById(R.id.saveMemberButton);
         saveMember.setOnClickListener(this);
-        name = (EditText)findViewById(R.id.memberName);
-        phone = (EditText)findViewById(R.id.memberPhone);
 
-        //gets the text of the name of the member
-        name.getText().toString();
-
-        //gets the number
-        phone.getText().toString();
     }
 
     //if Save Member is clicked, go back to the New Group Activity page
@@ -39,10 +38,24 @@ public class NewMemberActivity extends AppCompatActivity implements View.OnClick
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.saveMemberButton) {
+            // todo validation
             //TODO get the data from the text boxes. Add it to the AppData.members hashmap, where
             //TODO the String is the value placed at the phone number key
-            Intent intent = new Intent(this, NewGroupActivity.class);
-            startActivity(intent);
+
+            EditText nameText = (EditText)findViewById(R.id.memberName);
+            EditText phoneText = (EditText)findViewById(R.id.memberPhone);
+
+            //gets the text of the name of the member
+            name = nameText.getText().toString();
+
+            //gets the number
+            phone = phoneText.getText().toString();
+
+            Member m = new Member(name, phone);
+            GroupActivity.groupMembers.add(m);
+
+//            Intent intent = new Intent(this, NewGroupActivity.class);
+//            startActivity(intent);
         }
     }
 

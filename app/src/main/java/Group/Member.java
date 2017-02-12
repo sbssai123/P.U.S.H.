@@ -6,26 +6,26 @@ package Group;
 
 public class Member {
     private String name;
-    private int number; //todo should the number be an int? or a string? or a float? idk
+    private String number; //todo should the number be an int? or a string? or a float? idk
 
     //todo is this necessary? or should i have it default empty
-    public Member(String n, int num) {
+    public Member(String n, String num) {
         this.name = n;
-        this.number = num;
+        this.number = "+" + num;
     }
 
     public void setMemberName(String n) {
         this.name = n;
     }
 
-    public void setMemberNumber(int n) {
+    /*public void setMemberNumber(int n) {
         this.number = n;
-    }
+    }*/
 
     public String getName() {
         return this.name;
     }
-    public int getNumber() {
+    public String getNumber() {
         return this.number;
     }
 }
