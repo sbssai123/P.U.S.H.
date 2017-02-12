@@ -9,7 +9,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.schou.push.NewGroupActivity">
+    android:background="#e7bedf"
+    tools:context="com.example.schou.push.NewGroupActivity"
+    android:weightSum="1">
 
 
     <EditText
@@ -27,17 +29,26 @@
         <!--android:layout_height="wrap_content">-->
 
     <!--</ListView>-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="228dp"
+        android:layout_weight="0.42">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:id="@+id/textView3"
+            android:layout_weight="0.38" />
+    </ScrollView>
 
     <Button
         android:id="@+id/addMemberButton"
-        android:layout_width="wrap_content"
+        android:layout_width="339dp"
         android:layout_height="wrap_content"
-        android:text="Add Member" />
+        android:textColor="#FFFFFF"
+        android:text="Add Member"
+        android:textSize="24dp"
+        android:onClick="onClick"
+        android:background="#6455d4"
+        android:layout_weight="0.14" />
 
-    <Button
-        android:id="@+id/backToGroupsButton"
-        android:layout_below="@+id/addMemberButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back" />
 </LinearLayout>

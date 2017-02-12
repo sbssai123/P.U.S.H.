@@ -35,12 +35,10 @@ public class NewGroupActivity extends AppCompatActivity implements View.OnClickL
         shared = getSharedPreferences(MainActivity.PREF_NAME, Context.MODE_PRIVATE);
 
         addGroupButton = (Button)findViewById(R.id.addMemberButton);
-        back = (Button)findViewById(R.id.backToGroupsButton);
 
         listOfMembers = (ListView)findViewById(R.id.listOfMembers);
 
         addGroupButton.setOnClickListener(this);
-        back.setOnClickListener(this);
 
         //todo change this!!
 //        AppData.members[0].put("joe", 123);
@@ -77,17 +75,7 @@ public class NewGroupActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.addMemberButton) {
-            //EditText memberName = (EditText) findViewById(R.id.)
-
             Intent intent = new Intent(this, NewMemberActivity.class);
-            startActivity(intent);
-        }
-
-        if (v.getId() == R.id.backToGroupsButton) {
-            //todo get the group info.
-            //add all the members to the AppData.members hash
-            addMembers();
-            Intent intent = new Intent(this, GroupActivity.class);
             startActivity(intent);
         }
     }
