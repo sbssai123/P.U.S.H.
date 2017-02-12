@@ -56,8 +56,16 @@ public class GroupActivity extends AppCompatActivity implements View.OnClickList
     //When the button is clicked, go to the page to add a new Group
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.createGroupButton) {
+        if (v.getId() == R.id.addGroup) {
             Intent intent = new Intent(this, NewGroupActivity.class);
+            startActivity(intent);
+        }
+        if (v.getId() == R.id.setDefaultGroup) {
+            Intent intent = new Intent(this, GroupActivity.class);
+            startActivity(intent);
+        }
+        if(v.getId() == R.id.backButton) {
+            Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         }
     }
