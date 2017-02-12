@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected static String GROUPS = "Groups";
     protected static String DEFAULT_GROUP = "Default";
 
-    private SharedPreferences shared;
+    protected static SharedPreferences shared;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //messagesButton = (Button)findViewById(R.id.messagesButton);
 
-        Set<String> groups = shared.getStringSet(GROUPS, new HashSet<String>());
+        /*Set<String> groups = shared.getStringSet(GROUPS, new HashSet<String>());
         System.out.println("GROUPS: " + groups.toString());
         for (String group : groups) {
             Set<String> members = shared.getStringSet(group, new HashSet<String>());
@@ -54,13 +54,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String phone = shared.getString(member, "");
                 System.out.println(member + ": " + phone);
             }
-        }
+        }*/
 
     }
     private static final String KEY_TEXT_REPLY = "key_text_reply";
 
     private void addNotification() {
-        Intent intent = new Intent(this, BsyncTask.class);
+        Intent intent = new Intent(this, NeedHelpActivity.class);
         PendingIntent pIntent = PendingIntent.getActivity(this, (int) System.currentTimeMillis(), intent, 0);
 
         android.support.v4.app.NotificationCompat.Builder builder =
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         .addAction(R.drawable.icon, "Yes", pIntent)
                         .setOngoing(true);
 
-        Intent notificationIntent = new Intent(this, MainActivity.class);
+        Intent notificationIntent = new Intent(this, NeedHelpActivity.class);
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
         builder.setContentIntent(contentIntent);

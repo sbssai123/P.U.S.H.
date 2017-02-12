@@ -1,11 +1,15 @@
 package com.example.schou.push;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
 
 import java.io.IOException;
+import java.util.HashSet;
+import java.util.Set;
 
 import okhttp3.Authenticator;
 import okhttp3.Credentials;
@@ -21,6 +25,8 @@ public class BsyncTask extends AsyncTask {
     private static String userId = "u-6kaarnu3kfgeodbaawdyaxi";
     private static String apiToken = "t-hwwtdcfowaddpuc6z6jhj5q";
     private static String apiSecret = "nhjghkxdfaxvoic4puc5iufbibpca56hipznfha";
+
+    private SharedPreferences shared = MainActivity.shared;
 
 
     @Override
@@ -47,7 +53,22 @@ public class BsyncTask extends AsyncTask {
                 })
                 .build();
 
-        String json = "[{\"from\":\"+num0\","
+        //shared = getSharedPreferences(MainActivity.PREF_NAME, Context.MODE_PRIVATE);
+        String defaultGroup = shared.getString(MainActivity.DEFAULT_GROUP, "");
+        Set<String> names = shared.getStringSet(defaultGroup, new HashSet<String>());
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+        for (String name : names) {
+            sb.append("{\"from\":\"+14158510835\",");
+            sb.append("\"to\":\"+");
+            sb.append(shared.getString(name,"")); // the number
+            sb.append("\",\"text\":\"I need help.\"},");
+        }
+        sb.deleteCharAt(sb.length() - 1);
+        sb.append("]");
+
+        String json = sb.toString();
+                /*"[{\"from\":\"+num0\","
                 + "\"to\":\"+num1\","
                 + "\"text\":\"wooork\"" + "},"
                 + "{\"from\":\"+num0\","
@@ -56,7 +77,7 @@ public class BsyncTask extends AsyncTask {
                 + "{\"from\":\"+num0\","
                 + "\"to\":\"+num3\","
                 + "\"text\":\"wooork\"" + "}"
-                + "]";
+                + "]";*/
 
         String resp = "";
         try {
