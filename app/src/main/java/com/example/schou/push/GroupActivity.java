@@ -49,7 +49,7 @@ public class GroupActivity extends AppCompatActivity implements View.OnClickList
         //put a new String at the currentGroup value that is all caps.
         AppData.groups.put(cg, AppData.groups.get(cg).toString().toUpperCase());*/
 
-        groups = new LinkedList<String>();
+        //groups = new LinkedList<String>();
 
     }
 
