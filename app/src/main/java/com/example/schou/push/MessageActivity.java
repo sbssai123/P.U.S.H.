@@ -33,7 +33,7 @@ public class MessageActivity extends AppCompatActivity implements View.OnClickLi
         int cm = AppData.currentMessage;
         // update what is in the hashmap at the currentMessage ID and change it to uppercase to
         // notify users of the current message chosen
-        AppData.groups.put(cm, AppData.groups.get(cm).toString().toUpperCase());
+        AppData.messages.put(cm, AppData.messages.get(cm).toString().toUpperCase());
     }
 
 

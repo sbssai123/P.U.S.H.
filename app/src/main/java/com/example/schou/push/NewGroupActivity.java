@@ -23,7 +23,7 @@ public class NewGroupActivity extends AppCompatActivity implements View.OnClickL
         listOfMembers = (ListView)findViewById(R.id.listOfMembers);
 
         addGroupButton.setOnClickListener(this);
-        back = (Button)findViewById(R.id.backToGroupsButton);
+        back.setOnClickListener(this);
 
         //todo change this!!
         AppData.members[0].put("joe", 123);
@@ -33,7 +33,8 @@ public class NewGroupActivity extends AppCompatActivity implements View.OnClickL
     }
 
 
-    //When the button is clicked, go to the page to add a new Member
+    //When the Add button is clicked, go to the page to add a new Member
+    //When the back button is clicked, save and return to the Group page
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.addMemberButton) {
@@ -43,6 +44,7 @@ public class NewGroupActivity extends AppCompatActivity implements View.OnClickL
 
         if (v.getId() == R.id.backToGroupsButton) {
             //todo get the group info.
+            //add all the members to the AppData.members hash
             Intent intent = new Intent(this, GroupActivity.class);
             startActivity(intent);
         }
