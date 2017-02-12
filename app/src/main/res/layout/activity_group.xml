@@ -67,7 +67,7 @@
                     android:fillViewport="true"> <!--IMPORTANT otherwise backgrnd img. will not fill the whole screen -->
 
                     <TextView
-                        android:id="@+id/group_name"
+                        android:id="@+id/group_members"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
@@ -80,8 +80,8 @@
                 </ScrollView>
             </LinearLayout>
 
-            <EditText
-                android:id="@+id/custom_workout_name"
+            <TextView
+                android:id="@+id/group_name"
                 android:text="Add Group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -96,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:spinnerMode="dialog"
                 android:layout_marginRight="27dp"
-                android:layout_alignBottom="@+id/custom_workout_name"
+                android:layout_alignBottom="@+id/group_name"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="11dp" />
 

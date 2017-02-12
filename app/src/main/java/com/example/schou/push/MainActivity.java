@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     protected static String PREF_NAME = "MyPrefs";
     protected static String GROUPS = "Groups";
+    protected static String DEFAULT_GROUP = "Default";
 
     private SharedPreferences shared;
 
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         groupButton = (Button)findViewById(R.id.groupButton);
         groupButton.setOnClickListener(this);
 
-        messagesButton = (Button)findViewById(R.id.messagesButton);
+        //messagesButton = (Button)findViewById(R.id.messagesButton);
 
         Set<String> groups = shared.getStringSet(GROUPS, new HashSet<String>());
         System.out.println("GROUPS: " + groups.toString());
@@ -60,10 +61,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(this, GroupActivity.class);
             startActivity(intent);
         }
-        if (view.getId() == R.id.messagesButton) {
+        /*if (view.getId() == R.id.messagesButton) {
             Intent intent = new Intent(this, MessageActivity.class);
             startActivity(intent);
-        }
+        }*/
         // to send persistent notification to the home screen
         if (view.getId() == R.id.activeButton) {
 

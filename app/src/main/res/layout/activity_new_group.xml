@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:hint="Group Name:"
-        android:textSize="28"
+        android:textSize="28dp"
         android:ems="10"
         android:layout_marginBottom="40dp"
         android:id="@+id/groupName" />
@@ -37,7 +37,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="250dp"
-            android:id="@+id/textView3"
+            android:id="@+id/addMembers"
             android:layout_weight="0.38" />
     </ScrollView>
 

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -20,8 +21,6 @@ public class NewMemberActivity extends AppCompatActivity implements View.OnClick
     Button saveMember;
     //Member fields
     String name, phone;
-
-    ArrayList<String> groupMembers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

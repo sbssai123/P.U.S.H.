@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -69,8 +71,21 @@ public class GroupActivity extends AppCompatActivity implements View.OnClickList
 
         spinner.setOnItemSelectedListener(this);
 
+        TextView groupNameText = (TextView) findViewById(R.id.group_name);
+        String groupName = groupNameText.getText().toString();
+
         if (groups.length > 0) {
-            spinner.setSelection(0);
+            int defaultNum = 0;
+            String defaultGroup = shared.getString(MainActivity.DEFAULT_GROUP, "");
+            for (defaultNum = 0; defaultNum < groups.length; defaultNum++) {
+                if (spinner.getItemAtPosition(defaultNum).equals(defaultGroup)) {
+                    break;
+                }
+            }
+            if (defaultNum == groups.length) {
+                defaultNum = 0;
+            }
+            spinner.setSelection(defaultNum);
         }
 
     }
@@ -80,7 +95,18 @@ public class GroupActivity extends AppCompatActivity implements View.OnClickList
                                int pos, long id) {
         String selection = (String) parent.getItemAtPosition(pos);
         TextView spinnerText = (TextView) findViewById(R.id.group_name);
+
         spinnerText.setText(selection);
+
+        Set<String> mems = shared.getStringSet(selection, new HashSet<String>());
+
+        TextView membersText = (TextView) findViewById(R.id.group_members);
+        String str = "";
+        for (String s : mems) {
+            str += "\n" + s;
+        }
+
+        membersText.setText(str);
     }
 
     @Override
@@ -96,6 +122,12 @@ public class GroupActivity extends AppCompatActivity implements View.OnClickList
             startActivity(intent);
         }
         if (v.getId() == R.id.setDefaultGroup) {
+            TextView groupNameText = (TextView) findViewById(R.id.group_name);
+            String groupName = groupNameText.getText().toString();
+            SharedPreferences.Editor editor = shared.edit();
+            editor.putString(MainActivity.DEFAULT_GROUP, groupName);
+            editor.commit();
+
             Intent intent = new Intent(this, GroupActivity.class);
             startActivity(intent);
         }
