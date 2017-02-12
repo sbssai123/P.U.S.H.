@@ -13,9 +13,35 @@
     tools:context="com.example.schou.push.MainActivity">
 
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="32sp"
+        android:text="Preventing Unwanted Social Harassment"
+        android:id="@+id/textView"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="22dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:textSize="72sp"
+        android:text="P.U.S.H."
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:id="@+id/textView2"
+        android:layout_marginTop="56dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
     <Button
+
         android:id="@+id/activeButton"
         android:layout_width="wrap_content"
+
         android:layout_height="wrap_content"
         android:text="Activate"
         android:textSize="24dp"

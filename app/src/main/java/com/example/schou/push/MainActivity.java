@@ -43,18 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         groupButton = (Button)findViewById(R.id.groupButton);
         groupButton.setOnClickListener(this);
 
-        //messagesButton = (Button)findViewById(R.id.messagesButton);
 
-        /*Set<String> groups = shared.getStringSet(GROUPS, new HashSet<String>());
-        System.out.println("GROUPS: " + groups.toString());
-        for (String group : groups) {
-            Set<String> members = shared.getStringSet(group, new HashSet<String>());
-            System.out.println(group + "  " + members.toString());
-            for (String member : members) {
-                String phone = shared.getString(member, "");
-                System.out.println(member + ": " + phone);
-            }
-        }*/
 
     }
     private static final String KEY_TEXT_REPLY = "key_text_reply";

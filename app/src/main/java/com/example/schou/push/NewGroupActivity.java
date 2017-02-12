@@ -41,13 +41,6 @@ public class NewGroupActivity extends AppCompatActivity implements View.OnClickL
 
         addGroupButton.setOnClickListener(this);
 
-        //todo change this!!
-//        AppData.members[0].put("joe", 123);
-        //update what is in the hashmap at 0 and change it to uppercase to notify users of
-        //the current group chosen
-  //      AppData.groups.put(0, AppData.groups.get(0).toString().toUpperCase());
-
-        displayMembers();
     }
 
 
@@ -103,9 +96,6 @@ public class NewGroupActivity extends AppCompatActivity implements View.OnClickL
             startActivity(intent);
         }
 
-        if (v.getId() == R.id.validateGroup) {
-            addMembers();
-            checkDefault();
             Intent intent = new Intent(this, GroupActivity.class);
             startActivity(intent);
         }
