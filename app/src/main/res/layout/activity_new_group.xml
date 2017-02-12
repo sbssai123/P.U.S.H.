@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:hint="Group Name:"
-        android:textSize="28"
+        android:textSize="28dp"
         android:ems="10"
         android:layout_marginBottom="40dp"
         android:id="@+id/groupName" />
@@ -38,6 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:id="@+id/textView3"
+            android:textSize="24dp"
             android:layout_weight="0.38" />
     </ScrollView>
 
@@ -49,6 +50,7 @@
         android:text="Add Member"
         android:textSize="24dp"
         android:onClick="onClick"
+        android:gravity="center"
         android:background="#6455d4"
         android:layout_weight="0.11" />
 
@@ -58,6 +60,7 @@
         android:layout_height="wrap_content"
         android:textColor="#FFFFFF"
         android:text="Create Group"
+        android:gravity="center"
         android:textSize="24dp"
         android:onClick="onClick"
         android:background="#bd4dd1"
