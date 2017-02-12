@@ -116,7 +116,7 @@ public class MessageActivity extends AppCompatActivity implements View.OnClickLi
         }
 
         if (v.getId() == R.id.setDefaultMessage) {
-            TextView messageText = (TextView) findViewById(R.id.message_text);
+            TextView messageText = (TextView) findViewById(R.id.message_head);
             String message = messageText.getText().toString();
             SharedPreferences.Editor editor = MainActivity.shared.edit();
             editor.putString(MainActivity.DEFAULT_MESSAGE, message);

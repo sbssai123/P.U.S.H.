@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
+import android.util.Log;
 
 import java.io.IOException;
 import java.util.HashSet;
@@ -56,6 +57,8 @@ public class BsyncTask extends AsyncTask {
         //shared = getSharedPreferences(MainActivity.PREF_NAME, Context.MODE_PRIVATE);
         String defaultGroup = shared.getString(MainActivity.DEFAULT_GROUP, "");
         String defaultMessage = shared.getString(MainActivity.DEFAULT_MESSAGE, "");
+
+        Log.d("ERR", defaultMessage);
         Set<String> names = shared.getStringSet(defaultGroup, new HashSet<String>());
         StringBuilder sb = new StringBuilder();
         sb.append("[");
@@ -71,6 +74,7 @@ public class BsyncTask extends AsyncTask {
         sb.append("]");
 
         String json = sb.toString();
+        System.out.println(json);
                 /*"[{\"from\":\"+num0\","
                 + "\"to\":\"+num1\","
                 + "\"text\":\"wooork\"" + "},"
