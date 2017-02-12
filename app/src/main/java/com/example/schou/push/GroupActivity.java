@@ -10,23 +10,27 @@ import java.util.List;
 
 import Group.Group;
 
+/*
+This page is for Groups. There is a list of Groups, as well as the option to add new Groups with the
+click of a button.
+ */
 public class GroupActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button addButton;
+    Button addGroupButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_group);
 
-        addButton = (Button)findViewById(R.id.button);
-        addButton.setOnClickListener(this);
+        addGroupButton = (Button)findViewById(R.id.addGroupButton);
+        addGroupButton.setOnClickListener(this);
     }
 
     //When the button is clicked, go to the page to add a new Group
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.button) {
+        if (v.getId() == R.id.addGroupButton) {
             Intent intent = new Intent(this, NewGroupActivity.class);
             startActivity(intent);
         }

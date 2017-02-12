@@ -7,6 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+/*
+This page is for adding new Members. Users can add a Memver with a Name and a Phone Number.
+There is an option to Save the data and return back to the Group page.
+ */
 public class MemberActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button saveMember;
