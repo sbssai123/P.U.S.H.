@@ -30,6 +30,18 @@ public class NewMessageActivity extends AppCompatActivity implements View.OnClic
     //TODO make sure to save the message and it should appear in the list of messages
     @Override
     public void onClick(View v) {
+
+
+        EditText msgText = (EditText)findViewById(R.id.message);
+
+        boolean valid = true;
+
+        if (msgText.length() == 0 ) {
+            valid = false;
+            msgText.requestFocus();
+            msgText.setError("Message field cannot be empty");
+        }
+
         if (v.getId() == R.id.saveMessageButton) {
             //TODO get the data from the text box, and add the string to the AppData.messages hashmap
             //at int size + 1

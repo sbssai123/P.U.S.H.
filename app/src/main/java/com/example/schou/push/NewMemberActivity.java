@@ -6,6 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+
+import Group.Member;
 
 /*
 This page is for adding new Members. Users can add a Memver with a Name and a Phone Number.
@@ -15,7 +20,7 @@ public class NewMemberActivity extends AppCompatActivity implements View.OnClick
 
     Button saveMember;
     //Member fields
-    EditText name, phone;
+    String name, phone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,14 +29,7 @@ public class NewMemberActivity extends AppCompatActivity implements View.OnClick
 
         saveMember = (Button)findViewById(R.id.saveMemberButton);
         saveMember.setOnClickListener(this);
-        name = (EditText)findViewById(R.id.memberName);
-        phone = (EditText)findViewById(R.id.memberPhone);
 
-        //gets the text of the name of the member
-        name.getText().toString();
-
-        //gets the number
-        phone.getText().toString();
     }
 
     //if Save Member is clicked, go back to the New Group Activity page
@@ -39,11 +37,33 @@ public class NewMemberActivity extends AppCompatActivity implements View.OnClick
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.saveMemberButton) {
-            //TODO get the data from the text boxes. Add it to the AppData.members hashmap, where
-            //TODO the String is the value placed at the phone number key
 
-            AppData.members.put(name.getText().toString(), phone.getText().toString());
+            EditText nameText = (EditText)findViewById(R.id.memberName);
+            EditText phoneText = (EditText)findViewById(R.id.memberPhone);
 
+            //validation
+            boolean valid = true;
+
+            if (nameText.length() == 0 ) {
+                valid = false;
+                nameText.requestFocus();
+                nameText.setError("Name field cannot be empty");
+            }
+
+            if (phoneText.length() == 0 ) {
+                valid = false;
+                phoneText.requestFocus();
+                phoneText.setError("Number field cannot be empty");
+            }
+
+            //gets the text of the name of the member
+            name = nameText.getText().toString();
+
+            //gets the number
+            phone = phoneText.getText().toString();
+
+            Member m = new Member(name, phone);
+            GroupActivity.groupMembers.add(m);
             Intent intent = new Intent(this, NewGroupActivity.class);
             startActivity(intent);
         }

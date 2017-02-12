@@ -8,18 +8,62 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#e7bedf"
+
     tools:context="com.example.schou.push.MainActivity">
 
-    <Button
-        android:id="@+id/groupButton"
-        android:layout_width="match_parent"
+
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Groups" />
+        android:textSize="32sp"
+        android:text="Preventing Unwanted Social Harassment"
+        android:id="@+id/textView"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="22dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:textSize="72sp"
+        android:text="P.U.S.H."
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:id="@+id/textView2"
+        android:layout_marginTop="56dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <Button
-        android:id="@+id/messagesButton"
-        android:layout_below="@id/groupButton"
-        android:layout_width="match_parent"
+
+        android:id="@+id/activeButton"
+        android:layout_width="wrap_content"
+
         android:layout_height="wrap_content"
-        android:text="Messages" />
+        android:text="Activate"
+        android:textSize="24dp"
+        android:textColor="#FFFFFF"
+        android:width="500dp"
+        android:height="60dp"
+        android:background="#e157c6"
+        android:onClick="onClick"
+        android:layout_marginBottom="31dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+    android:id="@+id/groupButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Groups"
+    android:width="500dp"
+    android:height="60dp"
+        android:textSize="24dp"
+    android:onClick="onClick"
+        android:layout_marginBottom="26dp"
+        android:layout_above="@+id/activeButton"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

@@ -29,11 +29,11 @@ public class MessageActivity extends AppCompatActivity implements View.OnClickLi
 
         //todo change this, right now it is just the last one in the list as the current, we want
         //todo it to be the one the user selects.
-        AppData.currentMessage = AppData.messages.size();
+        /*AppData.currentMessage = AppData.messages.size();
         int cm = AppData.currentMessage;
         // update what is in the hashmap at the currentMessage ID and change it to uppercase to
         // notify users of the current message chosen
-        AppData.messages.put(cm, AppData.messages.get(cm).toString().toUpperCase());
+        AppData.messages.put(cm, AppData.messages.get(cm).toString().toUpperCase());*/
     }
 
 
