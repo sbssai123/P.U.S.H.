@@ -119,7 +119,7 @@ public class MessageActivity extends AppCompatActivity implements View.OnClickLi
             TextView messageText = (TextView) findViewById(R.id.message_text);
             String message = messageText.getText().toString();
             SharedPreferences.Editor editor = MainActivity.shared.edit();
-            editor.putString(MainActivity.DEFAULT_GROUP, message);
+            editor.putString(MainActivity.DEFAULT_MESSAGE, message);
             editor.commit();
 
             Intent intent = new Intent(this, MessageActivity.class);
