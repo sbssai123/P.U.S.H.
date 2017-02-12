@@ -55,6 +55,7 @@ public class BsyncTask extends AsyncTask {
 
         //shared = getSharedPreferences(MainActivity.PREF_NAME, Context.MODE_PRIVATE);
         String defaultGroup = shared.getString(MainActivity.DEFAULT_GROUP, "");
+        String defaultMessage = shared.getString(MainActivity.DEFAULT_MESSAGE, "");
         Set<String> names = shared.getStringSet(defaultGroup, new HashSet<String>());
         StringBuilder sb = new StringBuilder();
         sb.append("[");
@@ -62,7 +63,9 @@ public class BsyncTask extends AsyncTask {
             sb.append("{\"from\":\"+14158510835\",");
             sb.append("\"to\":\"+");
             sb.append(shared.getString(name,"")); // the number
-            sb.append("\",\"text\":\"I need help.\"},");
+            sb.append("\",\"text\":\"");
+            sb.append(defaultMessage);
+            sb.append("\"},");
         }
         sb.deleteCharAt(sb.length() - 1);
         sb.append("]");
