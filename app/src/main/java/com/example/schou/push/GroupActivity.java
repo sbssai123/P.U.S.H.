@@ -12,10 +12,6 @@ import Group.Group;
 
 public class GroupActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Group tonightsGroup;
-    private List<Group> favoriteGroups;
-    private List<Group> otherGroups;
-
     Button addButton;
 
     @Override
@@ -27,16 +23,7 @@ public class GroupActivity extends AppCompatActivity implements View.OnClickList
         addButton.setOnClickListener(this);
     }
 
-    //add a new Group with Name and Members
-    public void addGroup() {
-
-    }
-
-    //delete selected Group
-    public void deleteGroup() {
-
-    }
-
+    //When the button is clicked, go to the page to add a new Group
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.button) {

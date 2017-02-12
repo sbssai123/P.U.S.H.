@@ -4,12 +4,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import java.util.List;
-
+/*
+Screen that shows a list of all saved Messages. Allows you to add a new Message, and click a
+Message to select it as the current for the night.
+ */
 public class MessageActivity extends AppCompatActivity {
-
-    private String tonightsMsg;
-    private List<String> favoriteMsgs;
-    private List<String> otherMsgs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,13 +16,4 @@ public class MessageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_message);
     }
 
-    //add new message - should have a text box appear for them to type msg
-    public void addMessage() {
-
-    }
-
-    //delete selected message
-    public void deleteMessage() {
-
-    }
 }
