@@ -1,4 +1,4 @@
-package com.example.schou.push;
+package com.example.code.push;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

@@ -1,4 +1,4 @@
-package com.example.schou.push;
+package com.example.code.push;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,10 +11,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Set;
 
 import Group.Member;

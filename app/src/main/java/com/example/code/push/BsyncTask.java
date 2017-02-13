@@ -1,10 +1,7 @@
-package com.example.schou.push;
+package com.example.code.push;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Base64;
 
 import java.io.IOException;

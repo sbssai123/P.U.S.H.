@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#e7bedf"
-    tools:context="com.example.schou.push.GroupActivity">
+    tools:context="com.example.code.push.GroupActivity">
 <ScrollView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">

@@ -1,4 +1,4 @@
-package com.example.schou.push;
+package com.example.code.push;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 
-import java.util.List;
 /*
 Screen that shows a list of all saved Messages. Allows you to add a new Message, and click a
 Message to select it as the current for the night.

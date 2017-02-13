@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.schou.push">
+    package="com.example.code.push">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -11,20 +11,20 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.code.push.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".GroupActivity" />
-        <activity android:name=".MessageActivity" />
-        <activity android:name=".NewMemberActivity" />
-        <activity android:name=".NewGroupActivity" />
-        <activity android:name=".MembersInGroupActivity" />
-        <activity android:name=".NewMessageActivity"></activity>
-        <activity android:name=".NeedHelpActivity"></activity>
+        <activity android:name="com.example.code.push.GroupActivity" />
+        <activity android:name="com.example.code.push.MessageActivity" />
+        <activity android:name="com.example.code.push.NewMemberActivity" />
+        <activity android:name="com.example.code.push.NewGroupActivity" />
+        <activity android:name="com.example.code.push.MembersInGroupActivity" />
+        <activity android:name="com.example.code.push.NewMessageActivity"></activity>
+        <activity android:name="com.example.code.push.NeedHelpActivity"></activity>
     </application>
 
 </manifest>
