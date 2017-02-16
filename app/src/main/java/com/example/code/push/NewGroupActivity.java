@@ -1,4 +1,4 @@
-package com.example.schou.push;
+package com.example.code.push;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,15 +11,12 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Set;
 
 import Group.Member;
 
-public class NewGroupActivity extends AppCompatActivity implements View.OnClickListener{
+public class NewGroupActivity extends AppCompatActivity implements View.OnClickListener {
     Button addGroupButton;
     Button back;
     ListView listOfMembers;
@@ -35,9 +32,9 @@ public class NewGroupActivity extends AppCompatActivity implements View.OnClickL
 
         shared = getSharedPreferences(MainActivity.PREF_NAME, Context.MODE_PRIVATE);
 
-        addGroupButton = (Button)findViewById(R.id.addMemberButton);
+        addGroupButton = (Button) findViewById(R.id.addMemberButton);
 
-        listOfMembers = (ListView)findViewById(R.id.listOfMembers);
+        listOfMembers = (ListView) findViewById(R.id.listOfMembers);
 
         addGroupButton.setOnClickListener(this);
 
@@ -97,11 +94,8 @@ public class NewGroupActivity extends AppCompatActivity implements View.OnClickL
             startActivity(intent);
         }
 
-        if (v.getId() == R.id.validateGroup) {
-            addMembers();
-            checkDefault();
-            Intent intent = new Intent(this, GroupActivity.class);
-            startActivity(intent);
-        }
+        Intent intent = new Intent(this, GroupActivity.class);
+        startActivity(intent);
     }
 }
+

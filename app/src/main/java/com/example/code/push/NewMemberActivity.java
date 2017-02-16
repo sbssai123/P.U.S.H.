@@ -1,4 +1,4 @@
-package com.example.schou.push;
+package com.example.code.push;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,9 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-
-import java.util.ArrayList;
 
 import Group.Member;
 
@@ -36,10 +33,24 @@ public class NewMemberActivity extends AppCompatActivity implements View.OnClick
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.saveMemberButton) {
-            // todo validation
 
             EditText nameText = (EditText)findViewById(R.id.memberName);
             EditText phoneText = (EditText)findViewById(R.id.memberPhone);
+
+            //validation
+            boolean valid = true;
+
+            if (nameText.length() == 0 ) {
+                valid = false;
+                nameText.requestFocus();
+                nameText.setError("Name field cannot be empty");
+            }
+
+            if (phoneText.length() == 0 ) {
+                valid = false;
+                phoneText.requestFocus();
+                phoneText.setError("Number field cannot be empty");
+            }
 
             //gets the text of the name of the member
             name = nameText.getText().toString();
@@ -49,7 +60,6 @@ public class NewMemberActivity extends AppCompatActivity implements View.OnClick
 
             Member m = new Member(name, phone);
             GroupActivity.groupMembers.add(m);
-
             Intent intent = new Intent(this, NewGroupActivity.class);
             startActivity(intent);
         }

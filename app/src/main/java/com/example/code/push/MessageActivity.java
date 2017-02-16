@@ -1,4 +1,4 @@
-package com.example.schou.push;
+package com.example.code.push;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,18 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Set;
-
-import Group.Member;
 
 /*
 Screen that shows a list of all saved Messages. Allows you to add a new Message, and click a
