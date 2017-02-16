@@ -36,7 +36,6 @@
                 android:text="back"
                 android:onClick="onClick"
                 android:height="30dp"
-                android:weight="40dp"
                 android:textSize="20dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/backButton" />

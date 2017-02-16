@@ -3,6 +3,7 @@ package com.example.code.push;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.util.Base64;
+import android.util.Log;
 
 import java.io.IOException;
 import java.util.HashSet;
@@ -52,6 +53,9 @@ public class BsyncTask extends AsyncTask {
 
         //shared = getSharedPreferences(MainActivity.PREF_NAME, Context.MODE_PRIVATE);
         String defaultGroup = shared.getString(MainActivity.DEFAULT_GROUP, "");
+        String defaultMessage = shared.getString(MainActivity.DEFAULT_MESSAGE, "");
+
+        Log.d("ERR", defaultMessage);
         Set<String> names = shared.getStringSet(defaultGroup, new HashSet<String>());
         StringBuilder sb = new StringBuilder();
         sb.append("[");
@@ -59,12 +63,15 @@ public class BsyncTask extends AsyncTask {
             sb.append("{\"from\":\"+14158510835\",");
             sb.append("\"to\":\"+");
             sb.append(shared.getString(name,"")); // the number
-            sb.append("\",\"text\":\"I need help.\"},");
+            sb.append("\",\"text\":\"");
+            sb.append(defaultMessage);
+            sb.append("\"},");
         }
         sb.deleteCharAt(sb.length() - 1);
         sb.append("]");
 
         String json = sb.toString();
+        System.out.println(json);
                 /*"[{\"from\":\"+num0\","
                 + "\"to\":\"+num1\","
                 + "\"text\":\"wooork\"" + "},"

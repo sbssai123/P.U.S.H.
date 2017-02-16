@@ -17,12 +17,11 @@ import android.widget.Button;
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button groupButton;
-    Button messagesButton;
-
     protected static String PREF_NAME = "MyPrefs";
     protected static String GROUPS = "Groups";
-    protected static String DEFAULT_GROUP = "Default";
+    protected static String DEFAULT_GROUP = "DefaultGroup";
+    protected static String MESSAGES = "Messages";
+    protected static String DEFAULT_MESSAGE = "DefaultMessage";
 
     protected static SharedPreferences shared;
 
@@ -35,10 +34,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //new BsyncTask().execute();
 
-        groupButton = (Button)findViewById(R.id.groupButton);
+        Button groupButton = (Button)findViewById(R.id.groupButton);
         groupButton.setOnClickListener(this);
 
+        Button messageButton = (Button)findViewById(R.id.messageButton);
+        messageButton.setOnClickListener(this);
 
+        /*Set<String> groups = shared.getStringSet(GROUPS, new HashSet<String>());
+        System.out.println("GROUPS: " + groups.toString());
+        for (String group : groups) {
+            Set<String> members = shared.getStringSet(group, new HashSet<String>());
+            System.out.println(group + "  " + members.toString());
+            for (String member : members) {
+                String phone = shared.getString(member, "");
+                System.out.println(member + ": " + phone);
+            }
+        }*/
 
     }
     private static final String KEY_TEXT_REPLY = "key_text_reply";
@@ -63,8 +74,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Add as notification
         NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         manager.notify(0, builder.build());
-
-
     }
 
 
@@ -76,10 +85,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         }
       
-        /*if (view.getId() == R.id.messagesButton) {
+        if (view.getId() == R.id.messageButton) {
             Intent intent = new Intent(this, MessageActivity.class);
             startActivity(intent);
-        }*/
+        }
+
         // to send persistent notification to the home screen
         if (view.getId() == R.id.activeButton) {
             addNotification();

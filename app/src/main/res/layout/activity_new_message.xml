@@ -8,24 +8,33 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#e7bedf"
     tools:context="com.example.code.push.NewMessageActivity">
-
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="Message:"
-        android:ems="10"
-        android:id="@+id/message"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true" />
 
 
     <Button
         android:id="@+id/saveMessageButton"
-        android:layout_below="@id/message"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save Message" />
+        android:width="200dp"
+        android:textSize="28dp"
+        android:height="60dp"
+        android:text="Save Message"
+        android:onClick="onClick"
+        android:layout_marginBottom="67dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="Write your message here..."
+        android:textSize="25dp"
+        android:id="@+id/messageContent"
+        android:layout_marginTop="26dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+
 </RelativeLayout>

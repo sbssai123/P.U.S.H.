@@ -1,38 +1,37 @@
 package com.example.code.push;
 
 import android.content.Intent;
+import android.content.SharedPreferences.*;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.HashSet;
+import java.util.Set;
+
+
 /*
 Screen for adding a new Message that has a Text Box, and a Save/Back button.
  */
 public class NewMessageActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button saveMessageButton;
-    EditText msg;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_message);
-        saveMessageButton = (Button)findViewById(R.id.saveMessageButton);
+        Button saveMessageButton = (Button)findViewById(R.id.saveMessageButton);
         saveMessageButton.setOnClickListener(this);
-
-        msg = (EditText)findViewById(R.id.message);
     }
 
 
-    //if the saveMessageButton is clicked, go back to the Message Activity page\
-    //TODO make sure to save the message and it should appear in the list of messages
+    //if the saveMessageButton is clicked, go back to the Message Activity page
     @Override
     public void onClick(View v) {
 
 
-        EditText msgText = (EditText)findViewById(R.id.message);
+        EditText msgText = (EditText)findViewById(R.id.messageContent);
 
         boolean valid = true;
 
@@ -43,11 +42,19 @@ public class NewMessageActivity extends AppCompatActivity implements View.OnClic
         }
 
         if (v.getId() == R.id.saveMessageButton) {
-            //TODO get the data from the text box, and add the string to the AppData.messages hashmap
+
+            EditText newMessage = (EditText) findViewById(R.id.messageContent);
+            String msg = newMessage.getText().toString();
+            Set<String> allMessages = MainActivity.shared.getStringSet(MainActivity.MESSAGES, new HashSet<String>());
+            allMessages.add(msg);
+            Editor e = MainActivity.shared.edit();
+            e.putStringSet(MainActivity.MESSAGES, allMessages);
+            e.commit();
+
+           //TODO get the data from the text box, and add the string to the AppData.messages hashmap
             //at int size + 1
 
-            AppData.messages.put((Integer)(AppData.messages.size() + 1), msg.getText().toString());
-
+            AppData.messages.put((Integer)(AppData.messages.size() + 1), msg);
             Intent intent = new Intent(this, MessageActivity.class);
             startActivity(intent);
         }

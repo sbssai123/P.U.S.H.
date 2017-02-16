@@ -14,7 +14,6 @@
 
 
     <Button
-
         android:id="@+id/activeButton"
         android:layout_width="wrap_content"
 
@@ -26,22 +25,9 @@
         android:height="60dp"
         android:background="#e157c6"
         android:onClick="onClick"
-        android:layout_marginBottom="14dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true" />
 
-    <Button
-    android:id="@+id/groupButton"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Groups"
-    android:width="500dp"
-    android:height="65dp"
-        android:textSize="24dp"
-    android:onClick="onClick"
-        android:layout_marginBottom="19dp"
-        android:layout_above="@+id/activeButton"
-        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -55,6 +41,31 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="12dp" />
 
+    <Button
+    android:id="@+id/groupButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Groups"
+    android:width="500dp"
+    android:height="65dp"
+        android:textSize="24dp"
+    android:onClick="onClick"
+        android:layout_above="@+id/activeButton"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/messageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Messages"
+        android:width="500dp"
+        android:height="65dp"
+        android:textSize="24dp"
+        android:onClick="onClick"
+        android:layout_above="@+id/activeButton"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="52dp" />
+
     <ImageView
         android:layout_width="200dp"
         android:layout_height="180dp"
@@ -63,7 +74,7 @@
         android:width="10dp"
         android:height="20dp"
         android:id="@+id/imageView2"
-        android:layout_above="@+id/groupButton"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -72,8 +83,7 @@
         android:textSize="32sp"
         android:text="Preventing Unwanted Social Harassment"
         android:id="@+id/textView"
-        android:layout_above="@+id/imageView2"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="25dp" />
+        android:layout_below="@+id/textView2"
+        android:layout_alignStart="@+id/textView2" />
 
 </RelativeLayout>

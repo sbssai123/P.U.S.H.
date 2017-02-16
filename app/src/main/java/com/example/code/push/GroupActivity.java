@@ -27,7 +27,6 @@ night. It should be changed to all caps.
 public class GroupActivity extends AppCompatActivity implements View.OnClickListener,
         AdapterView.OnItemSelectedListener {
 
-    Button addGroupButton;
     private SharedPreferences shared;
 
     protected static List<Member> groupMembers;
@@ -47,14 +46,6 @@ public class GroupActivity extends AppCompatActivity implements View.OnClickList
         SharedPreferences.Editor editor = shared.edit();
 
         groupMembers = new LinkedList<Member>();
-
-        //todo change this so that it is the one they clicked on, but for now it is the last one
-        /*AppData.currentGroup = AppData.groups.size();
-        int cg = AppData.currentGroup;
-        //put a new String at the currentGroup value that is all caps.
-        AppData.groups.put(cg, AppData.groups.get(cg).toString().toUpperCase());*/
-
-        //groups = new LinkedList<String>();
 
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
         Set<String> groupSet = shared.getStringSet(MainActivity.GROUPS, new HashSet<String>());
@@ -128,7 +119,7 @@ public class GroupActivity extends AppCompatActivity implements View.OnClickList
             Intent intent = new Intent(this, GroupActivity.class);
             startActivity(intent);
         }
-        if(v.getId() == R.id.backButton) {
+        if (v.getId() == R.id.backButton) {
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         }

@@ -16,7 +16,7 @@ import java.util.Set;
 
 import Group.Member;
 
-public class NewGroupActivity extends AppCompatActivity implements View.OnClickListener{
+public class NewGroupActivity extends AppCompatActivity implements View.OnClickListener {
     Button addGroupButton;
     Button back;
     ListView listOfMembers;
@@ -32,12 +32,13 @@ public class NewGroupActivity extends AppCompatActivity implements View.OnClickL
 
         shared = getSharedPreferences(MainActivity.PREF_NAME, Context.MODE_PRIVATE);
 
-        addGroupButton = (Button)findViewById(R.id.addMemberButton);
+        addGroupButton = (Button) findViewById(R.id.addMemberButton);
 
-        listOfMembers = (ListView)findViewById(R.id.listOfMembers);
+        listOfMembers = (ListView) findViewById(R.id.listOfMembers);
 
         addGroupButton.setOnClickListener(this);
 
+        displayMembers();
     }
 
 
@@ -93,8 +94,8 @@ public class NewGroupActivity extends AppCompatActivity implements View.OnClickL
             startActivity(intent);
         }
 
-            Intent intent = new Intent(this, GroupActivity.class);
-            startActivity(intent);
-        }
+        Intent intent = new Intent(this, GroupActivity.class);
+        startActivity(intent);
     }
 }
+
