@@ -2,7 +2,7 @@
 P.U.S.H: Preventing Unwanted Social Harassment
 
 
-<img src="https://github.com/sbssai123/P.U.S.H./blob/master/main_screen_img.png" height="300">
+<img src="https://github.com/sbssai123/P.U.S.H./blob/master/main_screen_img.png" height="350" width = "200">
 
 
 
