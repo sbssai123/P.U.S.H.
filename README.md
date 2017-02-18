@@ -1,7 +1,8 @@
 # P.U.S.H.
 P.U.S.H: Preventing Unwanted Social Harassment
 
-Hi! Thanks for downloading P.U.S.H., the quickest way to notify your friends if you're ever in a
+
+An android app that is the quickest way to notify your friends if you're ever in a
 tough situation and need help, with just the *push* of a button!
 
 
@@ -12,7 +13,7 @@ Groups or delete Groups, as well as add Groups to Favorites. After creating a ne
 add a Group Name, and then add Members (with Names and Phone Numbers, so P.U.S.H. can contact them).
 Choose which Group you want to be your default Group for the night.
 
-~~2. Write a Message. This will be the message that will be sent out in case you need to contact your
+2. <b>Write a Message.</b> This will be the message that will be sent out in case you need to contact your
 friends in a hurry. Just like with Groups, you can add new Messages and delete them as you please.
 Just make sure you choose the Message of the Night as your Default.~~
 
