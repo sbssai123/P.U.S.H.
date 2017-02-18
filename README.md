@@ -1,10 +1,9 @@
 # P.U.S.H.
 P.U.S.H: Preventing Unwanted Social Harassment
 
-![alt tag](https://github.com/sbssai123/P.U.S.H./blob/master/main_screen_img.png)
 
-<img src="https://github.com/sbssai123/P.U.S.H./blob/master/main_screen_img.png" height="150">
-<img src="https://github.com/sbssai123/P.U.S.H./blob/master/main_screen_img.png" width="80">
+<img src="https://github.com/sbssai123/P.U.S.H./blob/master/main_screen_img.png" height="300">
+
 
 
 An android app that is the quickest way to notify your friends if you're ever in a
